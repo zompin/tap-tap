@@ -1,0 +1,12 @@
+{
+  "name": "popup",
+  "version": "1.0.0",
+  "dependencies": {
+    "prettier": "^3.2.4"
+  },
+  "scripts": {
+    "make": "rm addon.zip && cd src && zip ../addon.zip ./js ./popup.html ./manifest.json -r",
+    "start:firefox": "npx web-ext run --source-dir ./src"
+  },
+  "type": "module"
+}
