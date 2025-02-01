@@ -6,7 +6,8 @@
   },
   "scripts": {
     "make": "rm -f addon.zip && cd src && zip ../addon.zip ./js ./imgs ./*.html ./*.css ./manifest.json -r",
-    "start:firefox": "npx web-ext run --source-dir ./src"
+    "start:firefox": "npx web-ext run --source-dir ./src",
+    "start:firefox:android": "npx web-ext run --target=firefox-android --source-dir ./src --android-device $(adb devices | awk 'NR==2{print $1}')"
   },
   "type": "module"
 }
