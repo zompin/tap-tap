@@ -8,7 +8,7 @@ browser.storage.local.get('hosts').then(({ hosts }) => {
     textarea.innerHTML = hosts.join('\n');
 });
 
-textarea?.addEventListener('keydown', (e) => {
+textarea?.addEventListener('keyup', (e) => {
     const hosts = e.target.value
         .split('\n')
         .map((v) => v.trim())
