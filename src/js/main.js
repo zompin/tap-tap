@@ -16,7 +16,7 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo) => {
     const host = new URL(changeInfo.url).host;
     const newUrl = `/restrict.html?url=${changeInfo.url}`;
 
-    if (hosts.some((h) => host.indexOf(h) !== -1)) {
+    if (hosts.some((h) => host.toLowerCase().indexOf(h.toLowerCase()) !== -1)) {
         browser.tabs.update(tabId, { url: newUrl });
     }
 });
